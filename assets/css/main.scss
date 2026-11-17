@@ -83,3 +83,103 @@
   font-size: 0.9rem;
   font-weight: 600;
 }
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/* Kotak Hero Banner Gradasi Gelap seperti Referensi */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 85% 40%, #164e63 0%, #0f172a 75%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.75rem 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek lingkaran halus di pojok kanan bawah */
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  right: -70px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.08);
+  pointer-events: none;
+}
+
+.hero-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.6rem;
+}
+
+.hero-title {
+  font-size: 2.6rem !important;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0 !important;
+  border: none !important;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 1.1rem;
+}
+
+.hero-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  max-width: 650px;
+  margin-bottom: 1.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tombol Utama (Cyan Cerah) */
+.btn-hero-primary {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  background-color: #38bdf8;
+  color: #0f172a !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+}
+.btn-hero-primary:hover {
+  opacity: 0.9;
+}
+
+/* Tombol Sekunder (Transparan dengan Garis Tepi) */
+.btn-hero-secondary {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+}
+.btn-hero-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
