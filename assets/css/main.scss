@@ -37,54 +37,12 @@
     "layout/sidebar"
 ;
 
-/* Gaya Kartu & Grid Modern untuk Halaman Utama */
-.custom-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0 2.5rem 0;
-}
-.custom-card {
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1.5rem;
-  background: #ffffff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.custom-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-}
-.card-tag {
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #2563eb;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.4rem;
-}
-.big-number {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #cbd5e1;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.btn-pill {
-  display: inline-block;
-  padding: 0.5rem 1.1rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
-  background-color: #1e293b;
-  color: #ffffff !important;
-  text-decoration: none !important;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-/* Kotak Hero Banner Gradasi Gelap seperti Referensi */
+/* ==========================================================================
+   Gaya kustom portofolio (halaman utama, Teaching, Portfolio, CV)
+   Warna kartu memakai variabel tema agar ikut berubah di mode gelap.
+   ========================================================================== */
+
+/* ---------- Hero banner ---------- */
 .hero-banner {
   position: relative;
   overflow: hidden;
@@ -97,7 +55,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Efek lingkaran halus di pojok kanan bawah */
+/* Lingkaran halus di pojok kanan bawah */
 .hero-banner::after {
   content: "";
   position: absolute;
@@ -151,7 +109,7 @@
   z-index: 1;
 }
 
-/* Tombol Utama (Cyan Cerah) */
+/* Tombol utama (cyan) */
 .btn-hero-primary {
   display: inline-block;
   padding: 0.65rem 1.25rem;
@@ -167,7 +125,7 @@
   opacity: 0.9;
 }
 
-/* Tombol Sekunder (Transparan dengan Garis Tepi) */
+/* Tombol sekunder (transparan dengan garis tepi) */
 .btn-hero-secondary {
   display: inline-block;
   padding: 0.65rem 1.25rem;
@@ -182,4 +140,149 @@
 }
 .btn-hero-secondary:hover {
   background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Judul bagian ---------- */
+.section-head {
+  margin: 3rem 0 1.25rem 0;
+}
+.section-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-base-color);
+  margin: 0 0 0.35rem 0;
+}
+.page__content .section-head h2.section-title {
+  margin: 0 0 0.4rem 0;
+  padding: 0;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+.section-lead {
+  margin: 0;
+  max-width: 640px;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- Kartu ---------- */
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 2.5rem 0;
+}
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--global-border-color);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  background: var(--global-bg-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.custom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+.custom-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.custom-card p {
+  margin: 0 0 0.9rem 0;
+  font-size: 0.95rem;
+}
+.custom-card .card-link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.card-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--global-base-color);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.45rem;
+}
+.big-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--global-border-color);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Pencapaian (baris angka/ringkasan) ---------- */
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2.5rem 0;
+}
+.milestone {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--global-base-color);
+  background: var(--global-footer-bg-color);
+  border-radius: 0 8px 8px 0;
+}
+.milestone strong {
+  display: block;
+  font-size: 1rem;
+}
+.milestone span {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- Ajakan kontak ---------- */
+.cta-band {
+  margin: 3rem 0 1rem 0;
+  padding: 2rem 2.25rem;
+  border-radius: 16px;
+  background: radial-gradient(circle at 15% 20%, #164e63 0%, #0f172a 80%);
+  color: #ffffff;
+}
+.cta-band .section-eyebrow {
+  color: #38bdf8;
+}
+.page__content .cta-band h2 {
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  border: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.cta-band p {
+  max-width: 600px;
+  color: #cbd5e1;
+}
+
+/* ---------- Daftar jenjang / topik (halaman Teaching & CV) ---------- */
+.topic-list {
+  list-style: none;
+  margin: 0.75rem 0 1.5rem 0;
+  padding: 0;
+}
+.topic-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+/* ---------- Layar kecil ---------- */
+@media (max-width: 600px) {
+  .hero-banner {
+    padding: 2rem 1.4rem;
+  }
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  .cta-band {
+    padding: 1.6rem 1.4rem;
+  }
 }
