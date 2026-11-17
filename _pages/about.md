@@ -1,19 +1,25 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-<p style="font-size: 0.9rem; color: #64748b; font-weight: 600; margin-bottom: 0.2rem;">
-  Mathematics Education · Olympiad & Exam Preparation
-</p>
-<h1 style="margin-top: 0;">Nama Lengkap Anda</h1>
-<p>
-  Saya adalah pengajar matematika dan penyusun modul pembelajaran berbasis LaTeX. 
-  Fokus saya meliputi pembinaan olimpiade matematika, persiapan ujian masuk perguruan tinggi (UTBK), serta kurikulum internasional.
-</p>
+
+<div class="hero-banner">
+  <div class="hero-kicker">MATHEMATICS · OLYMPIAD & EXAM PREPARATION</div>
+  <h1 class="hero-title">Nama Lengkap<br>Anda</h1>
+  <div class="hero-subtitle">Mathematics graduate, tutor, and LaTeX module author.</div>
+  <p class="hero-desc">
+    Saya memiliki latar belakang pendidikan matematika dan berfokus pada pengajaran matematika untuk tingkat dasar, kurikulum Cambridge, persiapan UTBK, hingga pembinaan kompetisi/olimpiade. Selain mengajar, saya menyusun modul pembelajaran dan bank soal terstruktur menggunakan LaTeX.
+  </p>
+  <div class="hero-actions">
+    <a href="/portfolio/" class="btn-hero-primary">View modules & notes</a>
+    <a href="/teaching/" class="btn-hero-secondary">Teaching & coaching</a>
+    <a href="/cv/" class="btn-hero-secondary">Explore CV</a>
+  </div>
+</div>
 
 <div style="margin: 1.5rem 0 2.5rem 0;">
   <a href="/teaching/" class="btn-pill">Pengalaman Mengajar</a>
