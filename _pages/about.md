@@ -91,9 +91,9 @@ redirect_from:
 </div>
 
 <ul class="work-list">
-  <li><strong>Pengajaran privat & kelas</strong>Membimbing siswa dari tingkat dasar, kurikulum Cambridge, hingga persiapan olimpiade dan UTBK.</li>
-  <li><strong>Penyusunan modul LaTeX</strong>Merancang lembar kerja, diktat pembahasan, dan diagram geometri presisi tinggi menggunakan TikZ.</li>
-  <li><strong>Kurasi bank soal</strong>Mengumpulkan dan mengklasifikasikan soal-soal kompetisi berdasarkan topik dan teknik penyelesaian.</li>
+  <li><strong>Pengajaran privat & kelas </strong>Membimbing siswa dari tingkat dasar, kurikulum Cambridge, hingga persiapan olimpiade dan UTBK.</li>
+  <li><strong>Penyusunan modul LaTeX </strong>Merancang lembar kerja, diktat pembahasan, dan diagram geometri presisi tinggi menggunakan TikZ.</li>
+  <li><strong>Kurasi bank soal </strong>Mengumpulkan dan mengklasifikasikan soal-soal kompetisi berdasarkan topik dan teknik penyelesaian.</li>
 </ul>
 
 <!--
@@ -113,10 +113,7 @@ redirect_from:
 -->
 
 <div class="cta-band">
-  <p class="section-eyebrow">Hubungi saya</p>
-  <h2 id="hubungi-saya">Ada soal yang ingin dibahas bersama?</h2>
-  <p>Terbuka untuk diskusi seputar pengajaran matematika, persiapan olimpiade dan UTBK, atau kolaborasi penyusunan modul dan bank soal.</p>
-  <div class="hero-actions">
+  <p class="section-eyebrow">Hubungi saya 082327550123</p>
     <a href="mailto:mrozy.edu@gmail.com" class="btn-brand">Kirim email</a>
     <a href="/cv/" class="btn-ghost">Lihat CV</a>
   </div>
