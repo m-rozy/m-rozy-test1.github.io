@@ -355,32 +355,60 @@ html[data-theme="dark"] .problem__figure img {
 }
 
 /* ---------- Halaman CV ---------- */
+.cv-head { margin: 0 0 0.5rem 0; }
+.page__content .cv-head h1.cv-head__title {
+  margin: 0 0 0.4rem 0;
+  padding: 0;
+  border: none;
+  font-size: 2.2rem;
+  line-height: 1.15;
+}
+
+/* Judul bagian, dengan garis pemisah di atasnya */
+.page__content h2.cv-h2 {
+  margin: 3rem 0 0.75rem 0;
+  padding: 2.5rem 0 0 0;
+  border: none;
+  border-top: 1px solid var(--global-border-color);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+.cv-head + h2.cv-h2 {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Satu entri: tahun di kolom kiri, isi di kanan */
 .cv-entry {
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 0.25rem 1.25rem;
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--global-border-color);
+  padding: 1rem 0;
 }
-.cv-entry:last-of-type { border-bottom: none; }
+.cv-entry + .cv-entry {
+  border-top: 1px solid var(--global-border-color);
+}
 .cv-date {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--accent);
-  padding-top: 0.15rem;
+  padding-top: 0.2rem;
 }
 .cv-title {
+  font-size: 1.02rem;
   font-weight: 700;
   line-height: 1.35;
 }
 .cv-meta {
-  font-size: 0.9rem;
-  color: var(--global-text-color-light);
-  margin-bottom: 0.25rem;
+  font-size: 0.88rem;
+  margin: 0.15rem 0 0.35rem 0;
 }
 .cv-desc {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
 }
 .cv-type {
   display: inline-block;
@@ -391,17 +419,34 @@ html[data-theme="dark"] .problem__figure img {
   text-transform: uppercase;
   color: var(--brand);
 }
-.cv-more {
-  margin: 0.75rem 0 0 0;
+
+/* Prestasi: dua kolom, tahun di kiri yang lebih sempit */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.5rem;
 }
+.cv-grid .cv-entry {
+  grid-template-columns: 52px 1fr;
+  gap: 0.25rem 0.9rem;
+  border-top: none;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+/* Daftar yang bisa dilipat */
+.cv-more { margin: 1rem 0 0 0; }
 .cv-more summary {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.9rem;
   color: var(--brand);
 }
-.cv-more ul {
-  margin: 0.6rem 0 0 1.1rem;
+.cv-more ul { margin: 0.6rem 0 0 1.1rem; }
+
+@media (max-width: 760px) {
+  .cv-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .cv-entry { grid-template-columns: 1fr; }
+  .cv-grid .cv-entry { grid-template-columns: 1fr; }
 }
