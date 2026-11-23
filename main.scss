@@ -1,0 +1,407 @@
+---
+---
+
+/*
+ * This file controls what is imported from /_sass
+ *
+ * Note that the files are processed in the order they are imported, so they are partly
+   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ */
+
+@import
+    "vendor/breakpoint/breakpoint",
+
+    "themes",
+    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+
+    "include/mixins",
+    "vendor/susy/susy",
+
+    "layout/reset",
+    "layout/base",
+
+    "include/utilities",
+    "layout/tables",
+    "layout/buttons",
+    "layout/notices",
+    "layout/masthead",
+    "layout/navigation",
+    "layout/footer",
+    "syntax",
+
+    "layout/forms",
+
+    "layout/page",
+    "layout/archive",
+    "layout/sidebar"
+;
+
+
+/* ==========================================================================
+   Gaya kustom portofolio
+   Ganti warna cukup lewat variabel di bawah ini.
+   ========================================================================== */
+
+:root {
+  --brand:        #14532d;   /* hijau tua */
+  --brand-soft:   #166534;
+  --brand-deep:   #0f3d2a;   /* latar pita kontak */
+  --accent:       #d97706;   /* amber */
+  --tint:         #f0fdf4;   /* latar hero */
+
+  /* warna tautan & aksen bawaan tema ikut diselaraskan */
+  --global-base-color:         #15803d;
+  --global-link-color:         #15803d;
+  --global-link-color-hover:   #14532d;
+  --global-link-color-visited: #166534;
+}
+html[data-theme="dark"] {
+  --brand:        #4ade80;
+  --brand-soft:   #86efac;
+  --accent:       #fbbf24;
+  --tint:         rgba(74, 222, 128, 0.07);
+
+  --global-base-color:         #4ade80;
+  --global-link-color:         #86efac;
+  --global-link-color-hover:   #bbf7d0;
+  --global-link-color-visited: #86efac;
+}
+
+/* ---------- Hero (terang, teks di kiri, ilustrasi di kanan) ---------- */
+.hero-banner {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 2rem;
+  align-items: center;
+  background: linear-gradient(135deg, var(--tint) 0%, var(--global-bg-color) 100%);
+  border: 1px solid var(--global-border-color);
+  border-left: 6px solid var(--accent);
+  border-radius: 14px;
+  padding: 2.5rem 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.hero-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+.hero-title {
+  font-size: 2.5rem !important;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--global-text-color) !important;
+  margin: 0 0 0.9rem 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand);
+  margin-bottom: 1rem;
+}
+.hero-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  max-width: 620px;
+  margin-bottom: 1.6rem;
+}
+.hero-art {
+  width: 100%;
+  height: auto;
+  color: var(--brand);
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Tombol */
+.btn-brand,
+.btn-ghost {
+  display: inline-block;
+  padding: 0.62rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.btn-brand {
+  background-color: var(--brand);
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .btn-brand {
+  color: #052e16 !important;
+}
+.btn-brand:hover { opacity: 0.88; }
+.btn-ghost {
+  background-color: transparent;
+  border: 1.5px solid var(--brand);
+  color: var(--brand) !important;
+}
+.btn-ghost:hover { background-color: var(--tint); }
+
+/* ---------- Judul bagian ---------- */
+.section-head {
+  margin: 3rem 0 1.25rem 0;
+}
+.section-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.35rem 0;
+}
+.page__content .section-head h2.section-title {
+  margin: 0 0 0.4rem 0;
+  padding: 0;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+.section-lead {
+  margin: 0;
+  max-width: 640px;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- Cuplikan soal ---------- */
+.problem {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  border: 1px solid var(--global-border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.25rem 0 2.5rem 0;
+}
+.problem__figure {
+  margin: 0;
+  text-align: center;
+}
+.problem__figure img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+/* gambar TikZ berwarna hitam: dibalik di mode gelap */
+html[data-theme="dark"] .problem__figure img {
+  filter: invert(1);
+}
+.problem__figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+}
+.problem__label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.3rem 0;
+}
+.problem__text p {
+  margin: 0 0 1rem 0;
+}
+.problem__steps {
+  margin: 0 0 0.75rem 1.1rem;
+  padding: 0;
+}
+.problem__steps li {
+  margin-bottom: 0.45rem;
+}
+.problem__result {
+  display: inline-block;
+  margin: 0.25rem 0 0.5rem 0;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  background: var(--tint);
+  border-left: 3px solid var(--brand);
+  font-weight: 700;
+}
+.problem__check {
+  font-size: 0.88rem;
+  color: var(--global-text-color-light);
+  margin: 0;
+}
+
+/* ---------- Kartu ---------- */
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 2.5rem 0;
+}
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--global-border-color);
+  border-top: 4px solid var(--brand);
+  border-radius: 10px;
+  padding: 1.3rem 1.5rem;
+  background: var(--global-bg-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.custom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+.custom-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.custom-card p {
+  margin: 0 0 0.9rem 0;
+  font-size: 0.95rem;
+}
+.custom-card .card-link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.card-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.45rem;
+}
+
+/* ---------- Daftar kerja (menggantikan kartu bernomor) ---------- */
+.work-list {
+  list-style: none;
+  margin: 1.25rem 0 2.5rem 0;
+  padding: 0;
+}
+.work-list li {
+  padding: 0.9rem 0 0.9rem 1.1rem;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 0.9rem;
+  background: var(--tint);
+  border-radius: 0 8px 8px 0;
+}
+.work-list strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+/* ---------- Pencapaian (opsional) ---------- */
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2.5rem 0;
+}
+.milestone {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--brand);
+  background: var(--tint);
+  border-radius: 0 8px 8px 0;
+}
+.milestone strong { display: block; font-size: 1rem; }
+.milestone span { font-size: 0.85rem; color: var(--global-text-color-light); }
+
+/* ---------- Pita kontak ---------- */
+.cta-band {
+  margin: 3rem 0 1rem 0;
+  padding: 2rem 2.25rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--brand-deep) 0%, #14532d 100%);
+  color: #ffffff;
+}
+.cta-band .section-eyebrow { color: #fbbf24; }
+.page__content .cta-band h2 {
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  border: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.cta-band p { max-width: 600px; color: #d1fae5; }
+.cta-band .btn-brand { background-color: #fbbf24; color: #1c1917 !important; }
+.cta-band .btn-ghost { border-color: rgba(255, 255, 255, 0.6); color: #ffffff !important; }
+.cta-band .btn-ghost:hover { background-color: rgba(255, 255, 255, 0.12); }
+
+/* ---------- Halaman Teaching & CV ---------- */
+.topic-list {
+  list-style: none;
+  margin: 0.75rem 0 1.5rem 0;
+  padding: 0;
+}
+.topic-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+/* ---------- Layar kecil ---------- */
+@media (max-width: 760px) {
+  .hero-banner { grid-template-columns: 1fr; padding: 1.8rem 1.4rem; }
+  .hero-art { display: none; }
+  .hero-title { font-size: 2rem !important; }
+  .problem { grid-template-columns: 1fr; padding: 1.2rem; }
+  .cta-band { padding: 1.6rem 1.4rem; }
+}
+
+/* ---------- Halaman CV ---------- */
+.cv-entry {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.25rem 1.25rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--global-border-color);
+}
+.cv-entry:last-of-type { border-bottom: none; }
+.cv-date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+.cv-title {
+  font-weight: 700;
+  line-height: 1.35;
+}
+.cv-meta {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.25rem;
+}
+.cv-desc {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.cv-type {
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.cv-more {
+  margin: 0.75rem 0 0 0;
+}
+.cv-more summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--brand);
+}
+.cv-more ul {
+  margin: 0.6rem 0 0 1.1rem;
+}
+@media (max-width: 600px) {
+  .cv-entry { grid-template-columns: 1fr; }
+}
